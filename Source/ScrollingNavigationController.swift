@@ -463,7 +463,9 @@ open class ScrollingNavigationController: UINavigationController, UIGestureRecog
       frame = topViewController.view.frame
       frame.origin = CGPoint(x: frame.origin.x, y: navBarY)
       frame.size = CGSize(width: frame.size.width, height: view.frame.size.height - (navBarY) - tabBarOffset)
-      topViewController.view.frame = frame
+      
+      // Disabling resetting the frame due to it seeming to create extra white space between the nav bar and the view's Y origin.
+      //topViewController.view.frame = frame
     }
   }
 
